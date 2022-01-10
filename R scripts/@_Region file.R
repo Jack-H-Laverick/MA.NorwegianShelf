@@ -54,33 +54,9 @@ Region_mask <- st_transform(Region_mask, crs = crs)
 
 ## Polygons to mark which transects are along the open ocean-inshore boundary
 
-Inshore_Ocean1 <- matrix(c(16.23, 20.25, 20.25, 16.23, 16.23,    # Longitudes
-                           69.9, 68.4, 68.6, 70.1, 69.9), ncol = 2, byrow = F) %>% 
+Inshore_ocean_boundaries  <- matrix(c(1.7, 5.2, 5.2, 1.7, 1.7,    # Longitudes
+                           61.95, 61.95, 62.05, 62.05, 61.95), ncol = 2, byrow = F) %>% 
   shape()
-
-Inshore_Ocean2 <- matrix(c(41, 43, 44.25, 41, 41,               # Longitudes
-                           66.8, 67, 66, 66.4, 66.8), ncol = 2, byrow = F) %>% 
-  shape()
-
-Inshore_Ocean3 <- matrix(c(59.5, 55, 55, 59.5, 59.5,             # Longitudes
-                           70.2, 71.5, 71.3, 70, 70.2), ncol = 2, byrow = F) %>% 
-  shape()
-
-Inshore_Ocean4 <- matrix(c(67.9, 71, 70, 66.9, 67.9,             # Longitudes
-                           76.7, 77.7, 77.7, 76.7, 76.7), ncol = 2, byrow = F) %>% 
-  shape()
-
-Inshore_Ocean5 <- matrix(c(66.8, 67.1, 66.1, 65.8, 66.8,         # Longitudes
-                           80.95, 81.3, 81.3, 80.95, 80.95), ncol = 2, byrow = F) %>% 
-  shape()
-
-Inshore_Ocean6 <- matrix(c(10.4, 10.7, 9.7, 9.4, 10.4,           # Longitudes
-                           79.75, 80.05, 80.05, 79.75, 79.75), ncol = 2, byrow = F) %>% 
-  shape()
-
-Inshore_ocean_boundaries <- rbind(Inshore_Ocean1, Inshore_Ocean2, Inshore_Ocean3, Inshore_Ocean4, Inshore_Ocean5, Inshore_Ocean6)
-
-rm(Inshore_Ocean1, Inshore_Ocean2, Inshore_Ocean3, Inshore_Ocean4, Inshore_Ocean5, Inshore_Ocean6)
 
 #### expand polygon for sampling rivers ####
 
