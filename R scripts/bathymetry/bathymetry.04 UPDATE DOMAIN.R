@@ -49,6 +49,6 @@ ggplot() +
 new_domain <- st_intersection(Expanded, st_transform(domains)) %>% 
   select(Region, Shore) %>% 
   mutate(Elevation = exactextractr::exact_extract(raster::raster("../Shared data/GEBCO_2020.nc"), ., fun = "mean"),
-         Area = as.numeric(st_area(.)))                                 # Measure the size of each cell
+         area = as.numeric(st_area(.)))                                 # Measure the size of each cell
 
 saveRDS(new_domain, "./Objects/Domains.rds")
