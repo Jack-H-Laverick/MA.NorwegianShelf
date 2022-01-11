@@ -62,10 +62,10 @@ scheme_result <- arrange(scheme, group) %>%                                 # Cr
   select(x, y, slab_layer, longitude, latitude, Shore, Bathymetry) %>% 
   distinct() %>% 
   mutate(slab_layer = if_else(slab_layer == 1, "S", "D"),
-         weights = case_when(slab_layer == "S" & Bathymetry >= 60 ~ 60,     # Weights for zonal averages by thickness of water column
-                             slab_layer == "S" & Bathymetry < 60 ~ Bathymetry,
-                             slab_layer == "D" & Bathymetry >= 600 ~ 540,
-                             slab_layer == "D" & Bathymetry < 600 ~ (Bathymetry - 60)))
+         weights = case_when(slab_layer == "S" & Bathymetry >= SDepth ~ SDepth,     # Weights for zonal averages by thickness of water column
+                             slab_layer == "S" & Bathymetry < SDepth ~ Bathymetry,
+                             slab_layer == "D" & Bathymetry >= DDepth ~ (DDepth - SDepth),
+                             slab_layer == "D" & Bathymetry < DDepth ~ (Bathymetry - SDepth)))
 
 #### extract ####
 
