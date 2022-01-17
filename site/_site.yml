@@ -1,0 +1,42 @@
+name: "Norwegian Shelf"
+output_dir: "../docs"
+url: https://jack-h-laverick.github.io/MA.NorwegianShelf/
+
+home:
+  name: "Norwegian Shelf"
+  title: Norwegian Shelf
+
+navbar:
+  title: "Norwegian Shelf"
+  type: inverse
+  left:
+   - icon: fa-home
+     href: index.html
+   - icon: fa-cart-arrow-down
+     text: "Sources"
+     href: Sources.html
+   - icon: fa-project-diagram
+     text: "Code"
+     menu:
+      - text: "Dependencies"
+        href: network.html
+   - icon: fa-check-square
+     text: "Checks"
+     href: Checks.html
+   - icon: fa-clipboard
+     text: "Notes"
+     href: Notes.html
+
+  right:
+   - text: "More"
+     menu:
+      - text: "Norwegian Basin"
+        href: https://jack-h-laverick.github.io/MiMeMo.NorwegianBasin/
+   - icon : fa-cube fa-lg
+     text: "MiMeMo.tools"
+     href: https://jack-h-laverick.github.io/MiMeMo.tools/
+   - icon : fa-cube fa-lg
+     text: "nemomedusR"
+     href: https://jack-h-laverick.github.io/nemomedusR/
+   - icon: fa-github-square
+     href: https://github.com/Jack-H-Laverick/MiMeMo.NorwegianShelf
