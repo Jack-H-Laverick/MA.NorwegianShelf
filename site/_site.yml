@@ -31,7 +31,21 @@ navbar:
    - text: "More"
      menu:
       - text: "Norwegian Basin"
-        href: https://jack-h-laverick.github.io/MiMeMo.NorwegianBasin/
+        href: https://jack-h-laverick.github.io/MA.NorwegianBasin/
+      - text: "Celtic Sea"
+        href: https://jack-h-laverick.github.io/MA.CelticSea/
+      - text: "Azores"
+        href: https://jack-h-laverick.github.io/MA.NOMAR/
+      - text: "Canary Current"
+        href: https://jack-h-laverick.github.io/MA.CanaryCurrent/
+      - text: "Saint Helena"
+        href: https://jack-h-laverick.github.io/MA.SaintHelena/
+      - text: "Ascension"
+        href: https://jack-h-laverick.github.io/MA.Ascension/
+      - text: "Brazilian Shelf"
+        href: https://jack-h-laverick.github.io/MA.BrazilianShelf/
+      - text: "Benguela Current"
+        href: https://jack-h-laverick.github.io/MA.BenguelaCurrent/
    - icon : fa-cube fa-lg
      text: "MiMeMo.tools"
      href: https://jack-h-laverick.github.io/MiMeMo.tools/
@@ -39,4 +53,4 @@ navbar:
      text: "nemomedusR"
      href: https://jack-h-laverick.github.io/nemomedusR/
    - icon: fa-github-square
-     href: https://github.com/Jack-H-Laverick/MiMeMo.NorwegianShelf
+     href: https://github.com/Jack-H-Laverick/MA.NorwegianShelf
