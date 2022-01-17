@@ -52,5 +52,6 @@ navbar:
    - icon : fa-cube fa-lg
      text: "nemomedusR"
      href: https://jack-h-laverick.github.io/nemomedusR/
-   - icon: fa-github fa-lg
+   - icon: fa-code
+     text: "git"
      href: https://github.com/Jack-H-Laverick/MA.NorwegianShelf
