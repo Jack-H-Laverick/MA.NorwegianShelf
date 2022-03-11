@@ -43,8 +43,10 @@ Bathymetry <- readRDS("./Objects/NA_grid.rds") %>%                          # Im
 
 #### Build summary scheme ####
 
+sf_use_s2(F)
+
 scheme <- scheme_strathE2E(get_spatial(paste0(all_files$Path[1], all_files$File[1]), grid_W = F),
-                           Bathymetry, 60, 600, crop) %>% 
+                           Bathymetry, SDepth, DDepth, crop) %>% 
   select(x, y, layer, group, weight, slab_layer, longitude, latitude, Bathymetry) %>%   # Get a scheme to summarise for StrathE2E
   st_as_sf(coords = c("longitude", "latitude"), crs = 4326, remove = F) %>% # Convert to sf object
   st_join(st_transform(domains, crs = 4326)) %>%                            # Attach model zone information
@@ -77,3 +79,9 @@ all_files %>%
              scheme = scheme, ice_scheme = ice_scheme$n, start = start,  
              count = count, out_dir = "./Objects/Months", .progress = T)    # Perform the extraction and save an object for each month (in parallel)
 tictoc::toc()
+
+#### Check ####
+
+# ggplot(filter(NM.01.1980, slab_layer == "S")) +
+#   geom_raster(aes(x= x, y = y, fill = Temperature)) +
+#   theme_minimal()
