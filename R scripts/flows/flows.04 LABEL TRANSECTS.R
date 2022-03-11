@@ -27,7 +27,7 @@ grid <- st_union(points) %>%                                                # Co
   arrange(x, y)                                                             # Order the polygons to match the points
 
 ggplot(grid) +                                                              # Check the polygons match correctly with points
-  geom_sf(aes(fill = Ice_conc), size = 0.05, colour = "white") +
+  geom_sf(aes(fill = Temperature), size = 0.05, colour = "white") +
   geom_sf(data = Edges, colour = "orange") +
   zoom +
   theme_minimal() +
@@ -40,6 +40,7 @@ ggsave("./Figures/flows/check.04.1.png")
 
 labelled <- st_intersection(Edges, grid) %>% 
   mutate(split_length = as.numeric(st_length(.))) %>% 
+  filter(split_length > 1) %>%                                                  # Drop stupidly small transects which break code
   select(x, y, slab_layer, Shore, split_length, Bathymetry) %>% 
   characterise_flows(domains, precision = 10000) %>%                            # In which direction? (in or out of box and with which neighbour)
   filter(Neighbour != "Offshore")                                               # Offshore as a neighbour is a rare artefact from resolution.
